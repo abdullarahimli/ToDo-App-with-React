@@ -1,0 +1,27 @@
+.todo-header {
+    width: 80%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+}
+.todo-header input {
+    padding: 0.5rem;
+    margin: 20px 0;
+    border: 1px solid #bebebe;
+
+}
+.todo-header button {
+    font-weight: 600;
+
+}
+.todo-header-buttons :nth-child(2){
+    margin-left: 20px;
+}
+.bottom-line {
+    height: 10px;
+    width: 100%;
+    border-bottom: 1px solid #bebebe;
+    margin: 10px 0;
+    padding: 8px 0;
+}

@@ -1,0 +1,27 @@
+body {
+  background-image: url(../src/assets/images/DALL·E\ 2025-02-09\ 21.03.34\ -\ A\ high-resolution\,\ ultra-HD\ background\ image\ for\ a\ to-do\ application.\ The\ image\ features\ a\ clean\,\ minimalistic\ workspace\ with\ a\ modern\ aesthetic.\ A\ sl.webp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.todo-main {
+  background-color: #e2e2e2;
+  border-radius: 10px;
+  border: 10px solid grey;
+  width: 1000px;
+  max-width: 100%;
+  height: 600px;
+  border: 1px solid #bebebe;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
+.todo-main .title h1 {
+  margin: 20px 0 0;
+}
