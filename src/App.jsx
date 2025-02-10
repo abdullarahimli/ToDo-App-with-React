@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TodoCreate from "./components/TodoCreate";
 import TodoList from "./components/TodoList";

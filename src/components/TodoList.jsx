@@ -1,5 +1,3 @@
-import Todo from "./Todo";
-
 function TodoList() {
   return (
     <table className="table table-bordered text-center">
@@ -11,9 +9,7 @@ function TodoList() {
           <th>Actions</th>
         </tr>
       </thead>
-      <tbody>
-        
-      </tbody>
+      <tbody></tbody>
     </table>
   );
 }
