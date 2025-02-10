@@ -1,25 +1,15 @@
 import { useState } from "react";
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import TodoCreate from "./components/TodoCreate";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const [todos, setTodos] = useState([]);
-
-  const createTodo = (newTodo) => {
-    setTodos([...todos], newTodo);
-  };
-
   return (
-    <>
-      <div className="todo-main">
-        <div className="title">
-          <h1>To Do App</h1>
-        </div>
-        <TodoCreate onCreateTodo={createTodo} />
-        <TodoList />
-      </div>
-    </>
+    <div className="container mt-5">
+      <h1 className="text-center">To Do App</h1>
+      <TodoCreate />
+      <TodoList />
+    </div>
   );
 }
 

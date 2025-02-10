@@ -1,13 +1,21 @@
-import React from 'react'
-import Todo from './Todo'
-import "../styles/todoList.css"
+import Todo from "./Todo";
 
 function TodoList() {
   return (
-    <div className='todo-list'>
-      <Todo/>
-    </div>
-  )
+    <table className="table table-bordered text-center">
+      <thead className="table-light">
+        <tr>
+          <th>No.</th>
+          <th>Todo item</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+  );
 }
 
-export default TodoList
+export default TodoList;

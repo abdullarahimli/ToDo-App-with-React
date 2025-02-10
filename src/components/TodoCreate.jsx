@@ -1,20 +1,23 @@
-import "../styles/todoCreate.css";
-import { IoAddCircleOutline } from "react-icons/io5";
+import { useState } from "react";
 
-function TodoCreate({ onCreateTodo }) {
-  const onCreateTodo = () => {};
+function TodoCreate() {
   return (
-    <div className="todo-header">
+    <div
+      style={{ width: "100%", height: "50px" }}
+      className="d-flex gap-2 my-3"
+    >
       <input
+        style={{ width: "80%" }}
         className="form-control"
         type="text"
         placeholder="Enter a task here"
       />
-      <div className="todo-header-buttons">
-        <button className="btn btn-primary">Add task</button>
-        <button className="btn btn-warning">Get tasks</button>
-      </div>
-      <div className="bottom-line"></div>
+      <button style={{ width: "10%" }} className="btn btn-primary">
+        ADD TASK
+      </button>
+      <button style={{ width: "10%" }} className="btn btn-warning">
+        GET TASKS
+      </button>
     </div>
   );
 }
