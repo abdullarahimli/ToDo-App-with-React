@@ -1,21 +1,57 @@
 import { useState } from "react";
 import "../styles/todo.css";
-function Todo({ todo, onDeleteTodo }) {
+function Todo({ todo, onDeleteTodo, onUpdateTodo, onFinishedTodo }) {
   const { id, content, status } = todo;
   const [editable, setEditable] = useState(false);
+  const [newTodo, setNewTodo] = useState(content);
 
   const deleteTodo = () => {
     onDeleteTodo(id);
   };
   const toggleEdit = () => {
+    if (editable) {
+      updateTodo();
+    }
     setEditable((prev) => !prev); // editable değerini tersine çevir
+  };
+
+  const updateTodo = () => {
+    const request = {
+      id,
+      content: newTodo,
+      status: status,
+    };
+    onUpdateTodo(request);
+    setEditable(true);
+  };
+  const finishedTodo = () => {
+    const updatedTodo = {
+      ...todo,
+      status: "Finished",
+    };
+    onFinishedTodo(updatedTodo);
   };
   return (
     <tr>
       <td>{id}</td>
-      <td>{content}</td>
       <td>
-        <span>{status}</span>
+        {editable ? (
+          <input
+            value={newTodo}
+            onChange={(e) => setNewTodo(e.target.value)}
+            className="form-control"
+            type="text"
+          />
+        ) : (
+          content
+        )}
+      </td>
+      <td>
+        <span
+          className={status === "Finished" ? "text-success" : "text-warning"}
+        >
+          {status}
+        </span>
       </td>
       <td>
         <button
@@ -33,7 +69,9 @@ function Todo({ todo, onDeleteTodo }) {
         >
           DELETE
         </button>
-        <button className="btn btn-success fw-semibold">FINISHED</button>
+        <button onClick={finishedTodo} className="btn btn-success fw-semibold">
+          FINISHED
+        </button>
       </td>
     </tr>
   );

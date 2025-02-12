@@ -1,6 +1,6 @@
 import Todo from "./Todo";
 
-function TodoList({ todos, onDeleteTodo }) {
+function TodoList({ todos, onDeleteTodo, onUpdateTodo, onFinishedTodo }) {
   return (
     <table className="table table-bordered text-center">
       <thead className="table-light">
@@ -14,7 +14,13 @@ function TodoList({ todos, onDeleteTodo }) {
       <tbody>
         {todos &&
           todos.map((todo) => (
-            <Todo key={todo.id} todo={todo} onDeleteTodo={onDeleteTodo} />
+            <Todo
+              key={todo.id}
+              todo={todo}
+              onDeleteTodo={onDeleteTodo}
+              onUpdateTodo={onUpdateTodo}
+              onFinishedTodo={onFinishedTodo}
+            />
           ))}
       </tbody>
     </table>

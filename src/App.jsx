@@ -18,7 +18,18 @@ function App() {
       }));
     });
   };
-  console.log(todos)
+  console.log(todos);
+
+  const updateTodo = (newTodo) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id !== newTodo.id) {
+        return todo;
+      }
+      return newTodo;
+    });
+
+    setTodos([...updatedTodos]);
+  };
 
   const deleteTodo = (todoId) => {
     setTodos((prevTodos) => {
@@ -30,11 +41,24 @@ function App() {
     });
   };
 
+  const finishedTodo = (updatedTodo) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === updatedTodo.id ? { ...todo, status: "Finished" } : todo
+      )
+    );
+  };
+
   return (
     <div className="container mt-5">
       <h1 className="text-center">To Do App</h1>
       <TodoCreate onCreateTodo={createTodo} />
-      <TodoList todos={todos} onDeleteTodo={deleteTodo} />
+      <TodoList
+        todos={todos}
+        onDeleteTodo={deleteTodo}
+        onUpdateTodo={updateTodo}
+        onFinishedTodo={finishedTodo}
+      />
     </div>
   );
 }
